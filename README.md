@@ -4,7 +4,8 @@
 ## Overview
 This repository contains the openTelemac model code for simulating the hydrodynamics and sediment transport processes in river deltas. The model aims to provide insights into delta formation, evolution, and the impact of various environmental factors.
 
-openTelemac is an integrated suite of solvers for use in the field of free-surface flow. It has been utilized in many studies worldwide and has become a major standard in its field. Managed by a consortium of core organizations, openTelemac emphasizes reliability, validation, and global recognition of its tools. The open-source approach allows anyone to take advantage of openTelemac and assess its performance.
+openTelemac is an integrated suite of solvers for use in the field of free-surface flow. It has been utilized in many studies 
+worldwide and has become a major standard in its field. Managed by a consortium of core organizations, openTelemac emphasizes reliability, validation, and global recognition of its tools. The open-source approach allows anyone to take advantage of openTelemac and assess its performance.
 
 ## Model Solvers
 - **Telemac2D**: This hydrodynamics solver is used to solve the shallow water equations and incorporates a kappa-epsilon turbulence closure model. It is designed to accurately simulate the flow of water in two dimensions, which is essential for understanding the behavior of river deltas.
