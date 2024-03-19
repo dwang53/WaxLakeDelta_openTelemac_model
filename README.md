@@ -2,13 +2,13 @@
 # openTelemac River Delta Model
 
 ## Overview
-This repository contains the openTelemac model code for simulating the hydrodynamics and sediment transport processes in river deltas. The model aims to provide insights into delta formation, evolution, and the impact of various environmental factors.
+This repository contains the openTelemac model code for simulating the hydrodynamics and sediment transport processes in river deltas with the implementation of eco-geomorphic zones and DeLeeuw et al. (2020) entrainment relations. The model aims to introduce three different ways to model mud or cohesive s
+provide insights into suspended sediment transport in coastal and deltaic regions, river-dominated delta formation, evolution, and the impact of various environmental factors.
 
-openTelemac is an integrated suite of solvers for use in the field of free-surface flow. It has been utilized in many studies 
-worldwide and has become a major standard in its field. Managed by a consortium of core organizations, openTelemac emphasizes reliability, validation, and global recognition of its tools. The open-source approach allows anyone to take advantage of openTelemac and assess its performance.
+openTelemac is an integrated suite of solvers for free-surface environmental flow, sediment transport, morphodynamics, waves, and water quality. It has been widely utilized in studies across different scales, from global ocean currents models to local high-resolution models. The code is developed and managed by Saint Venant Hydraulics Lab, under the EDF and École des Ponts ParisTech. The open-source approach allows anyone to take advantage of openTelemac and assess its performance.
 
 ## Model Solvers
-- **Telemac2D**: This hydrodynamics solver is used to solve the shallow water equations and incorporates a kappa-epsilon turbulence closure model. It is designed to accurately simulate the flow of water in two dimensions, which is essential for understanding the behavior of river deltas.
+- **Telemac2D**: This hydrodynamics solver is used to solve shallow water equations and incorporates a kappa-epsilon turbulence closure model. It is designed to accurately simulate the flow of water in two dimensions, which is essential for understanding the behavior of river deltas.
 - **GAIA**: As the sediment transport solver, GAIA solves the Exner equation and handles morphodynamics. It is crucial for predicting sediment deposition and erosion patterns, which are key to modeling the evolution of river deltas.
 
 ## Features
