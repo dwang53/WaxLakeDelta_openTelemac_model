@@ -29,7 +29,7 @@ To use this model, please ensure you have openTelemac installed on your system. 
    ```
 3. Run the simulation using the provided scripts:
    ```
-   ./run_simulation.sh
+   ./runcode.sh
    ```
 
 ## Theoretical Background
