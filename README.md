@@ -93,6 +93,15 @@ where \( \bar{C} \) is the depth-averaged suspended sediment concentration, \( H
 
 In this equation, the term \( \nabla_h \cdot (\bar{C} H \mathbf{u}) \) represents the advection of sediment by the flow, \( \nabla_h \cdot (k H \nabla_h \bar{C}) \) represents the diffusion of sediment due to turbulence, and \( E - D \) accounts for the net change in sediment concentration due to entrainment and deposition processes.
 
+## List of files
+| File Type | Description | Location |
+|-----------|-------------|----------|
+| `.cas` | Steering files for Telemac2D and GAIA, containing all parameters and model settings. | Root directory |
+| `.slf` | Binary mesh file used by the model. | Root directory |
+| `.cli` | Mesh boundary condition file. | Root directory |
+| `.liq` | Liquid boundary time series file. | Root directory |
+| `.tbl` | Defines friction and constants in vegetation model across different eco-geomorphic zones. | Root directory |
+| Folder | Contains modified model code. | `user_fortran/` |
 
 
 ## Contributing
