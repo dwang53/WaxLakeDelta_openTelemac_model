@@ -18,6 +18,7 @@ openTelemac is an integrated suite of solvers for free-surface environmental flo
 
 ## Installation
 To use this model, please ensure you have openTelemac installed on your system. The installation guide can be found on the [openTelemac website](http://wiki.opentelemac.org/doku.php?id=installation_notes_2_beta).
+**This model is compiled and run in Linux system using Intel oneAPI High-Performance Computing (HPC) compiler**. For more details on the Intel HPC compiler please visit its [website](https://www.intel.com/content/www/us/en/developer/tools/oneapi/dpc-compiler.html#gs.6lr3f5).
 
 1. Clone the repository:
 ```markdown
