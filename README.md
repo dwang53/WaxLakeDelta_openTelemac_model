@@ -2,14 +2,13 @@
 # openTelemac River Delta Model
 
 ## Overview
-This repository contains the openTelemac model code for simulating the hydrodynamics and sediment transport processes in river deltas with the implementation of eco-geomorphic zones and DeLeeuw et al. (2020) entrainment relations. The model aims to introduce three different ways to model mud or cohesive s
-provide insights into suspended sediment transport in coastal and deltaic regions, river-dominated delta formation, evolution, and the impact of various environmental factors.
+This repository contains the openTelemac model code for simulating the hydrodynamics and sediment transport processes in Wax Lake Delta and Atchafalaya Delta with the implementation of eco-geomorphic zones and DeLeeuw et al. (2020) entrainment relations. The model aims to introduce three different ways to model mud or cohesive sediments: the classic theory, the non-cohesive theory, and the non-cohesive theory with effective Rouse profiles. The goal of developing this model is to provide insights into suspended sediment transport in freshwater systems employing the effective floc theory, hence using these theories to study river-dominated delta formation, evolution, and the impact of various environmental factors.
 
 openTelemac is an integrated suite of solvers for free-surface environmental flow, sediment transport, morphodynamics, waves, and water quality. It has been widely utilized in studies across different scales, from global ocean currents models to local high-resolution models. The code is developed and managed by Saint Venant Hydraulics Lab, under the EDF and École des Ponts ParisTech. The open-source approach allows anyone to take advantage of openTelemac and assess its performance.
 
 ## Model Solvers
-- **Telemac2D**: This hydrodynamics solver is used to solve shallow water equations and incorporates a kappa-epsilon turbulence closure model. It is designed to accurately simulate the flow of water in two dimensions, which is essential for understanding the behavior of river deltas.
-- **GAIA**: As the sediment transport solver, GAIA solves the Exner equation and handles morphodynamics. It is crucial for predicting sediment deposition and erosion patterns, which are key to modeling the evolution of river deltas.
+- **Telemac2D**: This hydrodynamics solver is used to solve shallow water equations and incorporates a kappa-epsilon turbulence closure model. It is designed to simulate depth-averaged equations in two dimensions, which is essential for understanding the flow hydrodynamics at river deltas. This solver also solves the transport equations for suspended sediment concentration while coupling with sediment transport solver GAIA.
+- **GAIA**: As the sediment transport solver, GAIA solves the Exner equation, calculates entrainment flux, and depositional flux, and evolves morphodynamics. It is crucial for predicting sediment deposition and erosion patterns, which are key to modeling the evolution of river deltas.
 
 ## Features
 - **Hydrodynamic Simulation**: Utilizes Telemac2D to model water flow dynamics.
@@ -22,7 +21,7 @@ To use this model, please ensure you have openTelemac installed on your system. 
 
 1. Clone the repository:
 ```markdown
-   git clone https://github.com/yourusername/openTelemac-river-delta-model.git
+   git clone https://github.com/dwang53/openTelemac-river-delta-model.git
    ```
 2. Navigate to the model directory:
    ```
@@ -103,15 +102,14 @@ Contributions to the openTelemac River Delta Model are welcome. Please read [CON
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
 
 ## Acknowledgments
-- The openTelemac community for their support and guidance.
-- All contributors who have helped shape this model.
+- funding source Delta-X, NSF floc project
 
 ## Contact
-For any queries or collaboration opportunities, please contact the repository owner at `your.email@example.com`.
+For any queries or collaboration opportunities, please contact the repository owner at `dwang53@caltech.edu`.
 
 ## References
 - Please cite the following papers when using this model:
-  - [Author et al., Year, "Title of the Paper", Journal Name, Volume(Issue), Pages.](link_to_paper)
+  - [Wang, D., et al., Year, "Title of the Paper", Journal Name, Volume(Issue), Pages.](link_to_paper)
   - [Author et al., Year, "Title of the Paper", Journal Name, Volume(Issue), Pages.](link_to_paper)
 
 ```
