@@ -2,7 +2,7 @@
 # openTelemac River Delta Model
 
 ## Overview
-This repository contains the openTelemac model code for simulating the hydrodynamics and sediment transport processes in Wax Lake Delta and Atchafalaya Delta with the implementation of eco-geomorphic zones and DeLeeuw et al. (2020) entrainment relations. The model aims to introduce three different ways to model mud or cohesive sediments: the classic theory, the non-cohesive theory, and the non-cohesive theory with effective Rouse profiles. The goal of developing this model is to provide insights into suspended sediment transport in freshwater systems employing the effective floc theory, hence using these theories to study river-dominated delta formation, evolution, and the impact of various environmental factors.
+This repository contains the openTelemac model code for simulating the hydrodynamics and suspended sediment transport in Wax Lake Delta and Atchafalaya Delta with the implementation of eco-geomorphic zones and DeLeeuw et al. (2020) entrainment relations. The model aims to introduce three different ways to model mud or cohesive sediments: the classic theory, the non-cohesive theory, and the non-cohesive theory with effective Rouse profiles. The goal of developing this model is to provide insights into suspended sediment transport in freshwater systems employing the effective floc theory, hence using these theories to study river-dominated delta formation, evolution, and the impact of various environmental factors.
 
 openTelemac is an integrated suite of solvers for free-surface environmental flow, sediment transport, morphodynamics, waves, and water quality. It has been widely utilized in studies across different scales, from global ocean currents models to local high-resolution models. The code is developed and managed by Saint Venant Hydraulics Lab, under the EDF and École des Ponts ParisTech. The open-source approach allows anyone to take advantage of openTelemac and assess its performance.
 
@@ -13,6 +13,7 @@ openTelemac is an integrated suite of solvers for free-surface environmental flo
 ## Features
 - **Hydrodynamic Simulation**: Utilizes Telemac2D to model water flow dynamics.
 - **Sediment Transport**: Employs GAIA for simulating erosion and deposition processes.
+- **Implementations**: This model implemented De Leeuw et al. (2020) entrainment relation in two different ways: one is to replace the coheisive entrainment relation 
 - **Delta Evolution**: Models the long-term evolution of river deltas under different scenarios.
 - **Environmental Impact Assessment**: Assesses the impact of human activities and climate change on delta morphology.
 
@@ -95,7 +96,7 @@ where \( \bar{C} \) is the depth-averaged suspended sediment concentration, \( H
 In this equation, the term \( \nabla_h \cdot (\bar{C} H \mathbf{u}) \) represents the advection of sediment by the flow, \( \nabla_h \cdot (k H \nabla_h \bar{C}) \) represents the diffusion of sediment due to turbulence, and \( E - D \) accounts for the net change in sediment concentration due to entrainment and deposition processes.
 
 ### Implementation of De Leeuw et al. (2020) entrainment formula 
-In this model case, we implemented De Leeuw et al. (2020) entrainment formula to model the suspended sediment transport for both non-cohesive sediment sand, and flocculated cohesive sediment mud. The De Leeuw paper suggested a new entrainment relation for non-coheisve sediments (sand and gravel) based on global data compilation of sand-bed rivers. Our previous study found that the mud particles are flocculated and form aggregates during the transport process. This makes the mud transport behaves similar to larger non-coheisve sediment grains. De Leeuw formula is found to be suitable to be extended and be used to describe the mud transport behavior as well.
+In this model case, we implemented De Leeuw et al. (2020) entrainment formula to model the suspended sediment transport for both non-cohesive sediment sand, and flocculated cohesive sediment mud. The De Leeuw paper suggested a new entrainment relation for non-cohesive sediments (sand and gravel) based on global data compilation of sand-bed rivers. Our previous study found that the mud particles are flocculated and form aggregates during the transport process. This makes the mud transport behave similarly to larger non-cohesive sediment grains. De Leeuw's formula is found to be suitable to be extended and be used to describe the mud transport behavior as well.
 
 $$
 E=A(\frac{u_*}{w_s})^{\alpha}Fr^{\beta}
@@ -103,31 +104,54 @@ $$
 
 
 ## Geo-Morphic Zones
+This model implements the Eco-GeoMorphic Zones, which are derived from remote sensing data of vegetation types. There are a total of 9 categories of land surface types. Each zone uses different friction coefficients. The vegetation types are modeled by employing the Baptist et al. (2007) vegetation friction formula and variable coefficients. These zones are shown in the figure below."
 
+<img src="Image/EcoGeoZones.png" alt="Your image description" width="50%"/>
 
 ## Model results
-
-![WLD_AVIRISCompare_SCC_20210401](https://github.com/dwang53/WaxLakeDelta_openTelemac_model/assets/17972285/4a03e3c9-cf62-439f-a594-eaefb0636738)
-![WLD_AVIRISCompare_SCCclassic_20210401](https://github.com/dwang53/WaxLakeDelta_openTelemac_model/assets/17972285/37508cfd-3c81-4258-ad31-8be63372ca44)
-![WLD_AVIRISCompare_SCCwssmall_20210401](https://github.com/dwang53/WaxLakeDelta_openTelemac_model/assets/17972285/1094d172-afa0-4b4f-837f-c1cf623bd9b7)
+<figure>
+  <table>
+    <tr>
+      <td>
+        <figure>
+          <img src="Image/WLD_AVIRISCompare_SCC_20210401.png" alt="De Leeuw theory and non-cohesive theory w/ effective settling velocity"  width="100%"/>
+          <figcaption>De Leeuw entrainment and non-cohesive theory w/ effective settling velocity</figcaption>
+        </figure>
+      </td>
+      <td>
+        <figure>
+          <img src="Image/WLD_AVIRISCompare_SCCclassic_20210401.png" alt="Classic theory of mud transport" width="100%"/>
+          <figcaption>Classic theory of mud transport</figcaption>
+        </figure>
+      </td>
+      <td>
+        <figure>
+          <img src="Image/WLD_AVIRISCompare_SCCwssmall_20210401.png" alt="De Leeuw theory and non-cohesive theory " width="100%"/>
+          <figcaption>De Leeuw entrainment and non-cohesive theory</figcaption>
+        </figure>
+      </td>
+    </tr>
+  </table>
+   <figcaption>De Leeuw theory and non-cohesive theory w/ effective settling velocity</figcaption>
+</figure>
 
 
 ## List of files
 | File Type | Description | Location |
 |-----------|-------------|----------|
-| `.cas` | Steering files for Telemac2D and GAIA, containing all parameters and model settings. | Root directory |
-| `.slf` | Binary mesh file used by the model. | Root directory |
-| `.cli` | Mesh boundary condition file. | Root directory |
-| `.liq` | Liquid boundary time series file. | Root directory |
-| `.tbl` | Defines friction and constants in vegetation model across different eco-geomorphic zones. | Root directory |
-| Folder | Contains modified model code. | `user_fortran/` |
+| `.cas` | Steering files for Telemac2D and GAIA, containing all parameters and model settings. | `CaseFile/` |
+| `.slf` | Binary mesh file used by the model. | `Mesh/` |
+| `.cli` | Mesh boundary condition file. | `Mesh/` |
+| `.liq` | Liquid boundary time series file. | `CaseFile/` |
+| `.tbl` | Defines friction and constants in vegetation model across different eco-geomorphic zones. | `CaseFile/` |
+| Folder | Contains modified model code. | `CaseFile/user_fortran/` |
 
 
 ## Contributing
-Contributions to the openTelemac River Delta Model are welcome. Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests.
+Contributions to the openTelemac River Delta Model are welcome. Please read [CONTRIBUTING](CONTRIBUTING) for details on our code of conduct, and the process for submitting pull requests.
 
 ## License
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE) file for details.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## Acknowledgments
 - funding source Delta-X, NSF floc project
@@ -138,8 +162,8 @@ For any queries or collaboration opportunities, please contact the repository ow
 ## References
 - Please cite the following papers when using this model:
   - [Wang, D., et al., Year, "Title of the Paper", Journal Name, Volume(Issue), Pages.](link_to_paper)
-  - [Author et al., Year, "Title of the Paper", Journal Name, Volume(Issue), Pages.](link_to_paper)
-
+  - [Baptist, M. J., Babovic, V., Rodríguez Uthurburu, J., Keijzer, M., Uittenbogaard, R. E., Mynett, A., & Verwey, A. (2007). On inducing equations for vegetation resistance. Journal of Hydraulic Research, 45(4), 435-450.](https://www.tandfonline.com/doi/abs/10.1080/00221686.2007.9521778)
+  - [De Leeuw, J., Lamb, M. P., Parker, G., Moodie, A. J., Haught, D., Venditti, J. G., & Nittrouer, J. A. (2020). Entrainment and suspension of sand and gravel. Earth Surface Dynamics, 8(2), 485-504.](https://esurf.copernicus.org/articles/8/485/2020/)
 ```
 
 Make sure to replace placeholders like `yourusername`, `your.email@example.com`, and the links to papers with your actual GitHub username, contact information, and references. This should give users a clear understanding of the solvers used in your model and how they contribute to the simulation of river deltas.
