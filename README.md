@@ -102,6 +102,14 @@ E=A(\frac{u_*}{w_s})^{\alpha}Fr^{\beta}
 $$
 
 
+## Geo-Morphic Zones
+
+
+## Model results
+
+![WLD_AVIRISCompare_SCC_20210401](https://github.com/dwang53/WaxLakeDelta_openTelemac_model/assets/17972285/4a03e3c9-cf62-439f-a594-eaefb0636738)
+
+
 ## List of files
 | File Type | Description | Location |
 |-----------|-------------|----------|
