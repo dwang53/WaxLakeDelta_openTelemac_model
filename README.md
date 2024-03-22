@@ -22,7 +22,7 @@ To use this model, please ensure you have openTelemac installed on your system. 
 
 1. Clone the repository:
 ```markdown
-   git clone https://github.com/dwang53/openTelemac-river-delta-model.git
+   git clone [https://github.com/dwang53/openTelemac-river-delta-model.git](https://github.com/dwang53/WaxLakeDelta_openTelemac_model.git)
    ```
 2. Navigate to the model directory:
    ```
