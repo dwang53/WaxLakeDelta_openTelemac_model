@@ -1,0 +1,61 @@
+/----------------------------------------------------------------------/
+/ FILES
+/----------------------------------------------------------------------/
+BOUNDARY CONDITIONS FILE : 'WLD_extendedDomain_15_160m_BC.cli'
+GEOMETRY FILE            : 'WLD_extendedDomain_15_160m_Veg.slf'
+RESULTS FILE             : 'gai_rouse-t2d.slf'
+/COMPUTATION CONTINUED : YES
+/PREVIOUS SEDIMENTOLOGICAL COMPUTATION FILE:
+/'gai_rouse-t2d_12days_pre.slf'
+/----------------------------------------------------------------------/
+/ OUTPUTS                                                              /
+/----------------------------------------------------------------------/
+VARIABLES FOR GRAPHIC PRINTOUTS : 
+'U,V,S,E,H,B,R,KS,TOB,*A*,*ES,CS*,D50,*S*'
+/,*M*'
+/'U,V,S,E,H,B,R,KS,TOB,M,N,P,CS*,*A*,*ES,CS*,D50,*CONC,C2DS*,*S*,*M*'
+/'U,V,H,B,CS1,N,P,E,1A1,1ES,C2DS1'
+MASS-BALANCE : YES
+/----------------------------------------------------------------------/
+/ GENERAL OPTIONS
+/----------------------------------------------------------------------/
+TITLE : 'Rouse profile with GAIA (Coupled with TELEMAC3D)'
+/----------------------------------------------------------------------/
+/ INITIAL CONDITIONS
+/----------------------------------------------------------------------/
+INITIAL SUSPENDED SEDIMENTS CONCENTRATION VALUES : 0.15;0.015
+PRESCRIBED SUSPENDED SEDIMENTS CONCENTRATION VALUES :
+0.15;0.015;0.15;0.015;0.15;0.015;0.15;0.015
+CLASSES IMPOSED SOLID DISCHARGES DISTRIBUTION= 0.9;0.1
+/----------------------------------------------------------------------/
+/  PHYSICAL OPTIONS
+/----------------------------------------------------------------------/
+SUSPENSION FOR ALL SANDS	: YES
+SUSPENSION TRANSPORT FORMULA FOR ALL SANDS : 0
+CLASSES TYPE OF SEDIMENT : NCO;NCO
+CLASSES SEDIMENT DENSITY : 2650.0;2650.0
+CLASSES SETTLING VELOCITIES : 0.00033;0.015
+CLASSES INITIAL FRACTION    : 0.8;0.2;0.2;0.8
+CLASSES SEDIMENT DIAMETERS = 0.00005;0.00035
+NUMBER OF LAYERS FOR INITIAL STRATIFICATION : 2
+LAYERS INITIAL THICKNESS : 0.5D0; 100.D0
+LAYERS MASS TRANSFER : 0.D0;0.D0
+LAYERS CRITICAL EROSION SHEAR STRESS OF THE MUD : 0.1
+LAYERS PARTHENIADES CONSTANT : 4.0E-4
+LAYERS MUD CONCENTRATION : 500.D0;500.D0
+SKIN FRICTION CORRECTION : 0
+COEFFICIENT FOR HORIZONTAL DIFFUSION OF SUSPENDED SEDIMENTS : 1.E-6
+COEFFICIENT FOR VERTICAL DIFFUSION OF SUSPENDED SEDIMENTS : 1.E-6
+/ACTIVE LAYER     : YES
+/ACTIVE LAYER THICKNESS : 
+CONSTANT ACTIVE LAYER THICKNESS : NO
+ACTIVE LAYER THICKNESS FORMULA	: 6
+/----------------------------------------------------------------------/
+/ NUMERICAL OPTIONS
+/----------------------------------------------------------------------/
+SCHEME FOR ADVECTION OF SUSPENDED SEDIMENTS = 5
+ADVECTION-DIFFUSION SCHEME WITH SETTLING VELOCITY : 1 / SET_DIF scheme
+SCHEME OPTION FOR ADVECTION OF SUSPENDED SEDIMENTS = 2
+PRECONDITIONING FOR DIFFUSION OF SUSPENSION  = 2
+SOLVER FOR DIFFUSION OF SUSPENSION = 3
+MAXIMUM NUMBER OF ITERATIONS FOR SOLVER FOR SUSPENSION = 50

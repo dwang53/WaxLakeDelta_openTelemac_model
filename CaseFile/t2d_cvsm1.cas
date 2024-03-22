@@ -1,0 +1,119 @@
+/----------------------------------------------------------------------
+/ experiment of Yen 180 bend
+/ CVSM example
+/
+/----------------------------------------------------------------------
+/                      FILE DEFINITION
+/----------------------------------------------------------------------
+/
+COUPLING WITH                    = 'GAIA'
+//COUPLING PERIOD FOR SISYPHE      = 1
+GAIA STEERING FILE    = gai_rouse-t3d.cas
+FORTRAN FILE                     :  'user_fortran'
+BOUNDARY CONDITIONS FILE :   'WLD_extendedDomain_15_160m_BC.cli'
+GEOMETRY FILE    :
+'WLD_extendedDomain_15_160m_Veg.slf'
+RESULTS FILE                     :  r2d_Hydro.slf
+COMPUTATION CONTINUED                       : YES
+/PREVIOUS COMPUTATION FILE       = SUITE2_wld_m02_atch_m03.res
+PREVIOUS COMPUTATION FILE       = SUITE1_final.res
+/PREVIOUS COMPUTATION FILE       = r2d_Hydro_12days_pre.slf
+LIQUID BOUNDARIES FILE:  liqBC_Spring2021.liq
+PARALLEL PROCESSORS  		 : 2688
+
+//NUMBER OF PRIVATE ARRAYS        = 3
+//NAMES OF PRIVATE VARIABLES      = 'BEDROCK                         ';
+//'SOIL                            ';'NONERODIDX                      '
+/
+
+
+
+/----------------------------------------------------------------------
+/                        FRICTION AND VEGETATION
+/----------------------------------------------------------------------
+FRICTION DATA	: NO
+/FRICTION DATA FILE	: 'friction1.tbl'
+LAW OF BOTTOM FRICTION                      : 5
+FRICTION COEFFICIENT                        : 0.17
+/VEGETATION FRICTION 			    : YES
+
+/----------------------------------------------------------------------
+/                        GENERAL OPTIONS
+/----------------------------------------------------------------------
+/
+TITLE : '1st try Yen-Versuch'
+/
+VARIABLES FOR GRAPHIC PRINTOUTS             : 'U,V,S,B,H,Q,M,W,N,O,US'
+TIME STEP : .5
+/
+/ FULL EXPERIMENT 2.5H
+NUMBER OF TIME STEPS : 2592000
+/648000
+GRAPHIC PRINTOUT PERIOD                     : 10800
+/5400
+LISTING PRINTOUT PERIOD                     : 3600
+/ 2 H
+/NUMBER OF TIME STEPS : 72000
+/GRAPHIC PRINTOUT PERIOD                     : 72000
+/LISTING PRINTOUT PERIOD                     : 1000
+//
+/NUMBER OF TIME STEPS : 10
+/GRAPHIC PRINTOUT PERIOD                     : 1
+/LISTING PRINTOUT PERIOD                     : 1
+/
+//COMPUTATION CONTINUED                       : YES
+/
+/----------------------------------------------------------------------
+/                    BOUNDARY CONDITIONS
+/----------------------------------------------------------------------
+/
+PRESCRIBED ELEVATIONS=  0.128 ; 5635.05 ; 5153.67; 200.
+PRESCRIBED FLOWRATES=   0.128 ; 5635.05 ; 5153.67; 200.
+/ NOAA; Morgan; Calumet; Franklin
+/
+/----------------------------------------------------------------------
+/                      INITIAL CONDITIONS
+/----------------------------------------------------------------------
+/
+INITIAL CONDITIONS                          :'CONSTANT ELEVATION'
+/INITIAL DEPTH                               : 5.
+INITIAL ELEVATION                               : 2.
+INITIAL TIME SET TO ZERO                    : YES
+/
+/----------------------------------------------------------------------
+/                       NUMERICAL OPTIONS
+/----------------------------------------------------------------------
+
+/For suspended load
+VELOCITY PROFILES = 1;1;1;1;1
+TREATMENT OF FLUXES AT THE BOUNDARIES=2;2;2;2;2
+
+/
+MASS-BALANCE                                : YES
+SOLVER					    : 1
+INFORMATION ABOUT SOLVER : YES
+/
+//TREATMENT OF THE LINEAR SYSTEM              : 2
+FREE SURFACE GRADIENT COMPATIBILITY         : 0.9
+MASS-LUMPING ON H                           : 0.6
+SOLVER ACCURACY                             : 1.E-8
+PRECONDITIONING			            : 2
+TYPE OF ADVECTION                           : 1;5;1;1 / 4;5
+SUPG OPTION                                 : 0;2
+//MATRIX STORAGE				    : 3
+IMPLICITATION FOR DEPTH : 1. / 0.6
+IMPLICITATION FOR VELOCITY : 1.
+OPTION FOR THE DIFFUSION OF VELOCITIES      : 1
+/
+/----------------------------------------------------------------------
+/                       TURBULENCE MODEL
+/----------------------------------------------------------------------
+/
+TURBULENCE MODEL                            : 3
+VELOCITY DIFFUSIVITY                        : 1.E-6 
+OPTION FOR THE SOLVER FOR K-EPSILON MODEL      = 2
+ACCURACY OF EPSILON                            = 1.E-9
+ACCURACY OF K                                  = 1.E-9
+MAXIMUM NUMBER OF ITERATIONS FOR K AND EPSILON = 100
+/......................................................................
+/
