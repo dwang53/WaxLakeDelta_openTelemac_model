@@ -108,6 +108,8 @@ $$
 ## Model results
 
 ![WLD_AVIRISCompare_SCC_20210401](https://github.com/dwang53/WaxLakeDelta_openTelemac_model/assets/17972285/4a03e3c9-cf62-439f-a594-eaefb0636738)
+![WLD_AVIRISCompare_SCCclassic_20210401](https://github.com/dwang53/WaxLakeDelta_openTelemac_model/assets/17972285/37508cfd-3c81-4258-ad31-8be63372ca44)
+![WLD_AVIRISCompare_SCCwssmall_20210401](https://github.com/dwang53/WaxLakeDelta_openTelemac_model/assets/17972285/1094d172-afa0-4b4f-837f-c1cf623bd9b7)
 
 
 ## List of files
