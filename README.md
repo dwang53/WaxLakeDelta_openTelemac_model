@@ -26,7 +26,7 @@ To use this model, please ensure you have openTelemac installed on your system. 
    ```
 2. Navigate to the model directory:
    ```
-   cd openTelemac-river-delta-model
+   cd WaxLakeDelta_openTelemac_model
    ```
 3. Run the simulation using the provided scripts:
    ```
