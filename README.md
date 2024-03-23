@@ -11,7 +11,7 @@ openTelemac is an integrated suite of solvers for free-surface environmental flo
 - **GAIA**: As the sediment transport solver, GAIA solves the Exner equation, calculates entrainment flux, and depositional flux, and evolves morphodynamics. It is crucial for predicting sediment deposition and erosion patterns, which are key to modeling the evolution of river deltas.
 
 ## Features
-- **Hydrodynamic Simulation**: Utilizes Telemac2D to model water flow dynamics.
+- **Hydrodynamic Simulation**: Utilizes Telemac2D to model water flow dynamics with turbulence closure.
 - **Sediment Transport**: Employs GAIA for simulating erosion and deposition processes.
 - **Implementations**: This model implemented De Leeuw et al. (2020) entrainment relation to model both sand and mud entrainments. Eco-geomorphic zones are also implemented along with Baptist vegetation resistance relations to model the complex flow over the wetland and river network. 
 - **High-Resolution Delta Evolution Model**: Models the long-term evolution of river deltas under different scenarios. The resolution used in this model is around 10m over the entire study domain (~2000 sq. km). It is run on the NSF Flagship supercomputer Frontera.
