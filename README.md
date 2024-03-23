@@ -102,6 +102,8 @@ This model implements the Eco-GeoMorphic zones, which are derived from remote se
 <img src="Image/EcoGeoZones.png" alt="Your image description" width="50%"/>
 
 ## Model results
+By changing the variables in the steering files, this model is used to test three different frameworks for modeling mud transport processes: (i) the non-cohesive theory and De Leeuw entrainment relation with effective settling velocities, (ii) the classic transport theory of mud, and (iii) the non-cohesive theory with De Leeuw entrainment relations. We found that the first method provides the best results when compared with the AVIRIS-NG derived suspended sediment data, without the need for extensive calibration iterations. The classic theory requires costly trial-and-error calibration, yet the results are still not fully satisfying. The third method yields the worst results due to the unrealistically high entrainment rate predicted by the non-cohesive De Leeuw formula.
+
 <figure>
   <table>
     <tr>
@@ -157,9 +159,4 @@ For any queries or collaboration opportunities, please contact the repository ow
   - [Wang, D., et al., Year, "Title of the Paper", Journal Name, Volume(Issue), Pages.](link_to_paper)
   - [Baptist, M. J., Babovic, V., Rodríguez Uthurburu, J., Keijzer, M., Uittenbogaard, R. E., Mynett, A., & Verwey, A. (2007). On inducing equations for vegetation resistance. Journal of Hydraulic Research, 45(4), 435-450.](https://www.tandfonline.com/doi/abs/10.1080/00221686.2007.9521778)
   - [De Leeuw, J., Lamb, M. P., Parker, G., Moodie, A. J., Haught, D., Venditti, J. G., & Nittrouer, J. A. (2020). Entrainment and suspension of sand and gravel. Earth Surface Dynamics, 8(2), 485-504.](https://esurf.copernicus.org/articles/8/485/2020/)
-```
 
-Make sure to replace placeholders like `yourusername`, `your.email@example.com`, and the links to papers with your actual GitHub username, contact information, and references. This should give users a clear understanding of the solvers used in your model and how they contribute to the simulation of river deltas.
-
-Source: Conversation with Bing, 3/15/2024
-(1) github.com. https://github.com/greysonmrx/Passarinhar/tree/3d88f691835b7a9cb008a9242c795ea06f63d7e3/README.md.
