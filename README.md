@@ -13,9 +13,9 @@ openTelemac is an integrated suite of solvers for free-surface environmental flo
 ## Features
 - **Hydrodynamic Simulation**: Utilizes Telemac2D to model water flow dynamics.
 - **Sediment Transport**: Employs GAIA for simulating erosion and deposition processes.
-- **Implementations**: This model implemented De Leeuw et al. (2020) entrainment relation in two different ways: one is to replace the coheisive entrainment relation 
+- **Implementations**: This model implemented De Leeuw et al. (2020) entrainment relation to model both sand and mud entrainments. Eco-geomorphic zones are also implemented along with Baptist vegetation resistance relations to model the complex flow over the wetland and river network. 
 - **Delta Evolution**: Models the long-term evolution of river deltas under different scenarios.
-- **Environmental Impact Assessment**: Assesses the impact of human activities and climate change on delta morphology.
+
 
 ## Installation
 To use this model, please ensure you have openTelemac installed on your system. The installation guide can be found on the [openTelemac website](http://wiki.opentelemac.org/doku.php?id=installation_notes_2_beta).
@@ -29,7 +29,11 @@ To use this model, please ensure you have openTelemac installed on your system. 
    ```
    cd WaxLakeDelta_openTelemac_model
    ```
-3. Run the simulation using the provided scripts:
+3. Copy the mesh files into CaseFile folder:
+   ```
+   cp ../Mesh/* .
+   ```
+4. Run the simulation using the provided scripts:
    ```
    ./runcode.sh
    ```
@@ -72,17 +76,6 @@ where \( z_b \) is the bed elevation, \( \lambda_p \) is the bed porosity, \( E 
 
 The entrainment flux \( E \) can be described as a function of the flow shear stress and the properties of the bed material, while the depositional flux \( D \) is related to the settling velocity of the sediment particles and the suspended sediment concentration. Together, these fluxes determine the net rate of change in the bed elevation due to sediment transport.
 
-### Advection-Diffusion Equation for Suspended Sediment Transport
-The transport of suspended sediment concentration in the model is described by the advection-diffusion equation, which accounts for the effects of sediment advection by the flow and diffusion due to turbulence. The equation also incorporates the depositional flux \( D \) and the entrainment flux \( E \), representing the rates of sediment settling and resuspension, respectively. The advection-diffusion equation is given by:
-
-$$
-\frac{\partial C}{\partial t} + u\frac{\partial C}{\partial x} + v\frac{\partial C}{\partial y} + w\frac{\partial C}{\partial z} = \frac{\partial}{\partial x}\left(\epsilon_x \frac{\partial C}{\partial x}\right) + \frac{\partial}{\partial y}\left(\epsilon_y \frac{\partial C}{\partial y}\right) + \frac{\partial}{\partial z}\left(\epsilon_z \frac{\partial C}{\partial z}\right) - D + E,
-$$
-
-where \( C \) is the suspended sediment concentration, \( u \), \( v \), and \( w \) are the flow velocities in the \( x \), \( y \), and \( z \) directions, respectively, and \( \epsilon_x \), \( \epsilon_y \), and \( \epsilon_z \) are the diffusion coefficients in the respective directions.
-
-The depositional flux \( D \) is typically modeled as a function of the sediment settling velocity and the sediment concentration near the bed, while the entrainment flux \( E \) is related to the bed shear stress and the erodibility of the sediment bed. These fluxes are critical in determining the net sediment transport and the evolution of the river delta morphology.
-
 
 ### Depth-Averaged Advection-Diffusion Equation for Suspended Sediment Transport
 The transport of suspended sediment concentration in the model is described by a depth-averaged advection-diffusion equation. This simplification reduces the complexity of the three-dimensional transport equation to two dimensions, making it more tractable for numerical simulation while still capturing the essential physics of sediment transport. The depth-averaged equation is given by:
@@ -96,15 +89,15 @@ where \( \bar{C} \) is the depth-averaged suspended sediment concentration, \( H
 In this equation, the term \( \nabla_h \cdot (\bar{C} H \mathbf{u}) \) represents the advection of sediment by the flow, \( \nabla_h \cdot (k H \nabla_h \bar{C}) \) represents the diffusion of sediment due to turbulence, and \( E - D \) accounts for the net change in sediment concentration due to entrainment and deposition processes.
 
 ### Implementation of De Leeuw et al. (2020) entrainment formula 
-In this model case, we implemented De Leeuw et al. (2020) entrainment formula to model the suspended sediment transport for both non-cohesive sediment sand, and flocculated cohesive sediment mud. The De Leeuw paper suggested a new entrainment relation for non-cohesive sediments (sand and gravel) based on global data compilation of sand-bed rivers. Our previous study found that the mud particles are flocculated and form aggregates during the transport process. This makes the mud transport behave similarly to larger non-cohesive sediment grains. De Leeuw's formula is found to be suitable to be extended and be used to describe the mud transport behavior as well.
+In this model case, we implemented De Leeuw et al. (2020) entrainment formula to model the suspended sediment transport for both non-cohesive sediment sand, and flocculated cohesive sediment mud. The De Leeuw paper suggested a new entrainment relation for non-cohesive sediments (sand and gravel) based on global data compilation of sand-bed rivers. Our previous study found that the mud particles are flocculated and form aggregates during the transport process. This makes the mud transport behave similarly to larger non-cohesive sediment grains. De Leeuw's formula is found to be suitable to be extended and be used to describe the mud transport behavior when employ the effective settling velocity concept.
 
 $$
 E=A(\frac{u_*}{w_s})^{\alpha}Fr^{\beta}
 $$
 
 
-## Geo-Morphic Zones
-This model implements the Eco-GeoMorphic Zones, which are derived from remote sensing data of vegetation types. There are a total of 9 categories of land surface types. Each zone uses different friction coefficients. The vegetation types are modeled by employing the Baptist et al. (2007) vegetation friction formula and variable coefficients. These zones are shown in the figure below."
+## Eco-GeoMorphic zones
+This model implements the Eco-GeoMorphic zones, which are derived from remote sensing data of vegetation types. There are a total of 9 categories of land surface types. Each zone uses different friction coefficients. The vegetation types are modeled by employing the Baptist et al. (2007) vegetation friction formula and variable coefficients. These zones are shown in the figure below.
 
 <img src="Image/EcoGeoZones.png" alt="Your image description" width="50%"/>
 
