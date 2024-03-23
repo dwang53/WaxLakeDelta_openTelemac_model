@@ -14,7 +14,7 @@ openTelemac is an integrated suite of solvers for free-surface environmental flo
 - **Hydrodynamic Simulation**: Utilizes Telemac2D to model water flow dynamics.
 - **Sediment Transport**: Employs GAIA for simulating erosion and deposition processes.
 - **Implementations**: This model implemented De Leeuw et al. (2020) entrainment relation to model both sand and mud entrainments. Eco-geomorphic zones are also implemented along with Baptist vegetation resistance relations to model the complex flow over the wetland and river network. 
-- **Delta Evolution**: Models the long-term evolution of river deltas under different scenarios.
+- **High-Resolution Delta Evolution Model**: Models the long-term evolution of river deltas under different scenarios. The resolution used in this model is around 10m over the entire study domain (~2000 sq. km). It is run on the NSF Flagship supercomputer Frontera.
 
 
 ## Installation
@@ -89,7 +89,7 @@ where \( \bar{C} \) is the depth-averaged suspended sediment concentration, \( H
 In this equation, the term \( \nabla_h \cdot (\bar{C} H \mathbf{u}) \) represents the advection of sediment by the flow, \( \nabla_h \cdot (k H \nabla_h \bar{C}) \) represents the diffusion of sediment due to turbulence, and \( E - D \) accounts for the net change in sediment concentration due to entrainment and deposition processes.
 
 ### Implementation of De Leeuw et al. (2020) entrainment formula 
-In this model case, we implemented De Leeuw et al. (2020) entrainment formula to model the suspended sediment transport for both non-cohesive sediment sand, and flocculated cohesive sediment mud. The De Leeuw paper suggested a new entrainment relation for non-cohesive sediments (sand and gravel) based on global data compilation of sand-bed rivers. Our previous study found that the mud particles are flocculated and form aggregates during the transport process. This makes the mud transport behave similarly to larger non-cohesive sediment grains. De Leeuw's formula is found to be suitable to be extended and be used to describe the mud transport behavior when employ the effective settling velocity concept.
+In this model case, we implemented the De Leeuw et al. (2020) entrainment formula to model the suspended sediment transport for both non-cohesive sediment, such as sand, and flocculated cohesive sediment, the mud. The De Leeuw paper proposed a new entrainment relation for non-cohesive sediments (sand and gravel) based on a global data compilation from sand-bed rivers. Our previous study found that mud particles flocculate and form aggregates during the transport process, causing the mud transport to behave similarly to larger non-cohesive sediment grains. De Leeuw's formula is found to be extendable and suitable for describing mud transport behavior when employing the concept of effective settling velocity. In all the tested scenarios, the De Leeuw relation is used for sand entrainment, while the entrainment relation for mud is adjusted.
 
 $$
 E=A(\frac{u_*}{w_s})^{\alpha}Fr^{\beta}
