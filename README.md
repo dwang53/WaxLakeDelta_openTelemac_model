@@ -38,6 +38,9 @@ To use this model, please ensure you have openTelemac installed on your system. 
    source runcode.sh
    ```
 
+## Quickstart of openTelemac
+
+
 ## Theoretical Background
 
 ### Shallow Water Equations in Telemac2D
