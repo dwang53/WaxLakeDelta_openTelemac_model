@@ -1,5 +1,5 @@
 
-# openTelemac River Delta Model
+# openTelemac Wax Lake Delta Model
 
 ## Overview
 This repository contains the openTelemac model code for simulating the hydrodynamics and suspended sediment transport in Wax Lake Delta and Atchafalaya Delta with the implementation of eco-geomorphic zones and DeLeeuw et al. (2020) entrainment relations. The model aims to introduce three different ways to model mud or cohesive sediments: the classic theory, the non-cohesive theory, and the non-cohesive theory with effective Rouse profiles. The goal of developing this model is to provide insights into suspended sediment transport in freshwater systems employing the effective floc theory, hence using these theories to study river-dominated delta formation, evolution, and the impact of various environmental factors.
