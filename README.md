@@ -175,4 +175,4 @@ For any queries or collaboration opportunities, please contact the repository ow
   - [Wang, D., et al., Year, "Title of the Paper", Journal Name, Volume(Issue), Pages.](link_to_paper)
   - [Baptist, M. J., Babovic, V., Rodríguez Uthurburu, J., Keijzer, M., Uittenbogaard, R. E., Mynett, A., & Verwey, A. (2007). On inducing equations for vegetation resistance. Journal of Hydraulic Research, 45(4), 435-450.](https://www.tandfonline.com/doi/abs/10.1080/00221686.2007.9521778)
   - [De Leeuw, J., Lamb, M. P., Parker, G., Moodie, A. J., Haught, D., Venditti, J. G., & Nittrouer, J. A. (2020). Entrainment and suspension of sand and gravel. Earth Surface Dynamics, 8(2), 485-504.](https://esurf.copernicus.org/articles/8/485/2020/)
-
+  - [Simard, M., M.W. Denbina, E. Rodriguez, A.L. Christensen, K.A. Wright, and A. Rovai. 2022. Delta-X: Ecogeomorphic Cell Products across the MRD, LA, USA, 2021. ORNL DAAC, Oak Ridge, Tennessee, USA. https://doi.org/10.3334/ORNLDAAC/2108]( https://doi.org/10.3334/ORNLDAAC/2108)
