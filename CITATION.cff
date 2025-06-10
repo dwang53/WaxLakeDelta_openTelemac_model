@@ -7,7 +7,7 @@ authors:
 - family-names: "Lamb"
   given-names: "Michael P."
 title:"openTelemac model for Wax Lake Delta, LA"
-version: v0.0.2
+version: 0.0.2
 date-released: 2025-06-10
 doi: 10.5281/zenodo.15636255 
-url: "https://github.com/github-linguist/linguist"
+url: "https://github.com/dwang53/WaxLakeDelta_openTelemac_model"
