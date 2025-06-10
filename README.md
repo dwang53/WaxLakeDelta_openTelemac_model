@@ -100,7 +100,7 @@ $$
 
 
 ## Eco-GeoMorphic zones
-This model implements the Eco-GeoMorphic zones, which are derived from remote sensing data of vegetation types. There are a total of 9 categories of land surface types. Each zone uses different friction coefficients. The vegetation types are modeled by employing the Baptist et al. (2007) vegetation friction formula and variable coefficients. These zones are shown in the figure below.
+This model incorporates Eco-GeoMorphic zones derived from remote sensing data on vegetation types. There are nine land surface categories in total. These categories are used to determine whether the initial bed material is sandy or muddy: river channels and secondary channels on wetlands are initialized with sandy beds, while the rest of the domain is assigned muddy beds. The ocean bed is set to be sandy.
 
 <img src="Image/EcoGeoZones.png" alt="Your image description" width="50%"/>
 
@@ -112,26 +112,39 @@ By changing the variables in the steering files, this model is used to test thre
     <tr>
       <td>
         <figure>
-          <img src="Image/WLD_AVIRISCompare_SCC_20210401.png" alt="De Leeuw theory and non-cohesive theory w/ effective settling velocity"  width="100%"/>
-          <figcaption>De Leeuw entrainment and non-cohesive theory w/ effective settling velocity</figcaption>
-        </figure>
-      </td>
-      <td>
-        <figure>
           <img src="Image/WLD_AVIRISCompare_SCCclassic_20210401.png" alt="Classic theory of mud transport" width="100%"/>
-          <figcaption>Classic theory of mud transport</figcaption>
+          <figcaption>Modeled SSC using washload \& cohesive-bed theory, SP21\_M1 model run.</figcaption>
         </figure>
       </td>
       <td>
         <figure>
-          <img src="Image/WLD_AVIRISCompare_SCCwssmall_20210401.png" alt="De Leeuw theory and non-cohesive theory " width="100%"/>
-          <figcaption>De Leeuw entrainment and non-cohesive theory</figcaption>
+          <img src="Image/WLD_AVIRISCompare_SCCwsfloc00033_20210401.png" alt="De Leeuw theory and non-cohesive theory " width="100%"/>
+          <figcaption>Modeled SSC using bed-material theory without flocs ($w_{s,floc}=0.0033 mm/s$), SP21\_M2 model run.</figcaption>
+        </figure>
+      </td>
+    </tr>
+  </table>
+</figure>
+<figure>
+  <table>
+    <tr>
+      <td>
+        <figure>
+          <img src="Image/WLD_AVIRISCompare_SCCwsfloc0033_20210401.png" alt="Classic theory of mud transport" width="100%"/>
+          <figcaption>Modeled SSC using bed-material theory with flocs mixture ($w_{s,floc}=0.033 mm/s$), SP21\_M3 model run.</figcaption>
+        </figure>
+      </td>
+      <td>
+        <figure>
+          <img src="Image/WLD_AVIRISCompare_SCCwsfloc033_20210401.png" alt="De Leeuw theory and non-cohesive theory " width="100%"/>
+          <figcaption> Modeled SSC using bed-material theory with flocs ($w_{s,floc}=0.33 mm/s$), SP21\_M4 model run.</figcaption>
         </figure>
       </td>
     </tr>
   </table>
    <figcaption>De Leeuw theory and non-cohesive theory w/ effective settling velocity</figcaption>
 </figure>
+
 
 
 ## List of files
