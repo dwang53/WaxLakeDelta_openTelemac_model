@@ -1,13 +1,13 @@
 cff-version: 1.2.0
 message: "If you use this software, please cite it as below."
 authors:
-- family-names: Wang
-  given-names: Dongchen
-  orcid: https://orcid.org/0000-0003-4544-2745
-- family-names: "Lamb"
-  given-names: "Michael P."
-title:"openTelemac model for Wax Lake Delta, LA"
+  - family-names: Wang
+    given-names: Dongchen
+    orcid: https://orcid.org/0000-0003-4544-2745
+  - family-names: Lamb
+    given-names: Michael P.
+title: "openTelemac model for Wax Lake Delta, LA"
 version: 0.0.2
 date-released: 2025-06-10
-doi: 10.5281/zenodo.15636255 
+doi: 10.5281/zenodo.15636255
 url: "https://github.com/dwang53/WaxLakeDelta_openTelemac_model"
